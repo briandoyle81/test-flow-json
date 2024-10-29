@@ -17,14 +17,7 @@ function App() {
 
   const queryGreeting = async () => {
     const res = await fcl.query({
-      cadence: `
-        import HelloWorld from 0xa1296b1e2e90ca5b
-
-        access(all)
-        fun main(): String {
-          return HelloWorld.greeting
-        }
-      `,
+      cadence: HelloWorldScript,
     });
     setGreeting(res);
   };
